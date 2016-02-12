@@ -1,0 +1,16 @@
+
+URL = http://www.intra2net.com/en/developer/libftdi/download/libftdi1-1.1.tar.bz2
+AUTOCONF =  cmake CMakeLists.txt
+AUTOCONF += -DCMAKE_INSTALL_PREFIX=/ -DCMAKE_SYSTEM_PREFIX_PATH=$(STAGEDIR)
+AUTOCONF += -DFTDIPP=OFF
+AUTOCONF += -DUNIT_TEST=OFF
+# AUTOCONF += -DBoost_DEBUG=ON
+# AUTOCONF += -DBoost_NO_BOOST_CMAKE=ON
+# AUTOCONF += -DBoost_NO_SYSTEM_PATHS=TRUE
+# AUTOCONF += -DBOOST_INCLUDE_DIR:PATH=$(PWD)
+# AUTOCONF += -DBOOST_LIBRARY_DIR=$(PWD)
+# AUTOCONF += -DBOOST_LIBRARY=/dev/null
+# AUTOCONF += -DBOOST_ROOT=$(PWD)
+
+include $(ROOTDIR)/tools/automake.inc
+

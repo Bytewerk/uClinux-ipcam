@@ -1,0 +1,69 @@
+Index: netifd/proto-shell.c
+===================================================================
+--- netifd.orig/proto-shell.c
++++ netifd/proto-shell.c
+@@ -406,6 +406,19 @@
+ 	return dev;
+ }
+ 
++static void
++proto_shell_device_apply_config(struct device *dev, struct blob_attr *attr)
++{
++	const struct uci_blob_param_list *cfg = dev->type->config_params;
++	struct blob_attr *tb[cfg->n_params];
++
++	memset(tb, 0, sizeof(tb));
++	blobmsg_parse(cfg->params, cfg->n_params, tb,
++		      blobmsg_data(attr), blobmsg_len(attr));
++	device_init_settings(dev, tb);
++	dev->set_state(dev, true);
++}
++
+ enum {
+ 	NOTIFY_ACTION,
+ 	NOTIFY_ERROR,
+@@ -419,6 +432,7 @@
+ 	NOTIFY_ROUTES,
+ 	NOTIFY_ROUTES6,
+ 	NOTIFY_TUNNEL,
++	NOTIFY_DEVICE,
+ 	NOTIFY_DATA,
+ 	NOTIFY_KEEP,
+ 	NOTIFY_HOST,
+@@ -440,6 +454,7 @@
+ 	[NOTIFY_ROUTES] = { .name = "routes", .type = BLOBMSG_TYPE_ARRAY },
+ 	[NOTIFY_ROUTES6] = { .name = "routes6", .type = BLOBMSG_TYPE_ARRAY },
+ 	[NOTIFY_TUNNEL] = { .name = "tunnel", .type = BLOBMSG_TYPE_TABLE },
++	[NOTIFY_DEVICE] = { .name = "device", .type = BLOBMSG_TYPE_TABLE },
+ 	[NOTIFY_DATA] = { .name = "data", .type = BLOBMSG_TYPE_TABLE },
+ 	[NOTIFY_KEEP] = { .name = "keep", .type = BLOBMSG_TYPE_BOOL },
+ 	[NOTIFY_HOST] = { .name = "host", .type = BLOBMSG_TYPE_STRING },
+@@ -497,6 +512,9 @@
+ 		if (!dev)
+ 			return UBUS_STATUS_INVALID_ARGUMENT;
+ 
++		if (tb[NOTIFY_DEVICE])
++			proto_shell_device_apply_config(dev, tb[NOTIFY_DEVICE]);
++
+ 		interface_set_l3_dev(iface, dev);
+ 		if (device_claim(&iface->l3_dev) < 0)
+ 			return UBUS_STATUS_UNKNOWN_ERROR;
+Index: netifd/scripts/netifd-proto.sh
+===================================================================
+--- netifd.orig/scripts/netifd-proto.sh
++++ netifd/scripts/netifd-proto.sh
+@@ -76,6 +76,14 @@
+ 	proto_close_nested
+ }
+ 
++proto_add_device() {
++	proto_add_nested "device"
++}
++
++proto_close_device() {
++	proto_close_nested
++}
++
+ proto_add_data() {
+ 	proto_add_nested "data"
+ }

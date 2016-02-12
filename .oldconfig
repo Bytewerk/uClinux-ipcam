@@ -1,0 +1,4 @@
+OLD_VENDOR="Nuvoton"
+OLD_PRODUCT="NUC700"
+OLD_LINUXDIR="linux"
+OLD_LIBCDIR="uClibc"

@@ -1,0 +1,98 @@
+diff --git a/interface.c b/interface.c
+index ea018ad..bf1f606 100644
+--- a/interface.c
++++ b/interface.c
+@@ -240,6 +240,7 @@ mark_interface_down(struct interface *iface)
+ 		return;
+ 
+ 	iface->state = IFS_DOWN;
++	netifd_ubus_interface_state_event(iface);
+ 	if (state == IFS_UP || state == IFS_SETUP)
+ 		interface_event(iface, IFEV_DOWN);
+ 	interface_ip_set_enabled(&iface->config_ip, false);
+@@ -256,6 +257,7 @@ __interface_set_down(struct interface *iface, bool force)
+ 	case IFS_UP:
+ 	case IFS_SETUP:
+ 		iface->state = IFS_TEARDOWN;
++		netifd_ubus_interface_state_event(iface);
+ 		if (state == IFS_UP)
+ 			interface_event(iface, IFEV_DOWN);
+ 
+@@ -284,6 +286,7 @@ __interface_set_up(struct interface *iface)
+ 	netifd_log_message(L_NOTICE, "Interface '%s' is setting up now\n", iface->name);
+ 
+ 	iface->state = IFS_SETUP;
++	netifd_ubus_interface_state_event(iface);
+ 	ret = interface_proto_event(iface->proto, PROTO_CMD_SETUP, false);
+ 	if (ret)
+ 		mark_interface_down(iface);
+@@ -652,6 +655,7 @@ interface_proto_cb(struct interface_proto_state *state, enum interface_proto_eve
+ 		interface_ip_set_enabled(&iface->config_ip, true);
+ 		system_flush_routes();
+ 		iface->state = IFS_UP;
++		netifd_ubus_interface_state_event(iface);
+ 		iface->start_time = system_get_rtime();
+ 		interface_event(iface, IFEV_UP);
+ 		netifd_log_message(L_NOTICE, "Interface '%s' is now up\n", iface->name);
+@@ -675,6 +679,7 @@ interface_proto_cb(struct interface_proto_state *state, enum interface_proto_eve
+ 		netifd_log_message(L_NOTICE, "Interface '%s' has lost the connection\n", iface->name);
+ 		mark_interface_down(iface);
+ 		iface->state = IFS_SETUP;
++		netifd_ubus_interface_state_event(iface);
+ 		break;
+ 	default:
+ 		return;
+@@ -690,6 +695,7 @@ void interface_set_proto_state(struct interface *iface, struct interface_proto_s
+ 		iface->proto = NULL;
+ 	}
+ 	iface->state = IFS_DOWN;
++	netifd_ubus_interface_state_event(iface);
+ 	iface->proto = state;
+ 	if (!state)
+ 		return;
+diff --git a/ubus.c b/ubus.c
+index 422b652..86a63fd 100644
+--- a/ubus.c
++++ b/ubus.c
+@@ -1205,6 +1205,30 @@ netifd_ubus_interface_event(struct interface *iface, bool up)
+ }
+ 
+ void
++netifd_ubus_interface_state_event(struct interface *iface)
++{
++	const char *state;
++	struct interface *real_iface;
++
++	/* make sure we have the real iface and not some bogus dynamic one */
++	real_iface = vlist_find(&interfaces, iface->name, real_iface, node);
++	if (real_iface)
++		iface = real_iface;
++
++	blob_buf_init(&b, 0);
++	switch (iface->state) {
++	case IFS_SETUP:    state = "setup";    break;
++	case IFS_UP:       state = "up";       break;
++	case IFS_TEARDOWN: state = "teardown"; break;
++	case IFS_DOWN:     state = "down";     break;
++	default:           state = "unknown";  break;
++	}
++	blobmsg_add_string(&b, "state", state);
++	blobmsg_add_string(&b, "interface", iface->name);
++	ubus_send_event(ubus_ctx, "network.interface", b.head);
++}
++
++void
+ netifd_ubus_interface_notify(struct interface *iface, bool up)
+ {
+ 	const char *event = (up) ? "interface.update" : "interface.down";
+diff --git a/ubus.h b/ubus.h
+index 5419622..2cf6f80 100644
+--- a/ubus.h
++++ b/ubus.h
+@@ -22,5 +22,6 @@ void netifd_ubus_add_interface(struct interface *iface);
+ void netifd_ubus_remove_interface(struct interface *iface);
+ void netifd_ubus_interface_event(struct interface *iface, bool up);
+ void netifd_ubus_interface_notify(struct interface *iface, bool up);
++void netifd_ubus_interface_state_event(struct interface *iface);
+ 
+ #endif

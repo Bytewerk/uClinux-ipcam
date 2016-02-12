@@ -1,0 +1,13 @@
+diff --git a/interface.c b/interface.c
+index b2c8baf..708842d 100644
+--- a/interface.c
++++ b/interface.c
+@@ -208,7 +208,7 @@ mark_interface_down(struct interface *iface)
+ 	enum interface_state state = iface->state;
+ 
+ 	iface->state = IFS_DOWN;
+-	if (state == IFS_UP)
++	if (state == IFS_UP || state == IFS_SETUP)
+ 		interface_event(iface, IFEV_DOWN);
+ 	interface_ip_set_enabled(&iface->config_ip, false);
+ 	interface_ip_flush(&iface->proto_ip);

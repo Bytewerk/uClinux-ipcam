@@ -1,0 +1,15 @@
+diff --git a/wireless.h b/wireless.h
+index cdd7187..c4790e9 100644
+--- a/wireless.h
++++ b/wireless.h
+@@ -17,8 +17,8 @@
+ #include <libubox/utils.h>
+ #include "interface.h"
+ 
+-struct vlist_tree wireless_devices;
+-struct avl_tree wireless_drivers;
++extern struct vlist_tree wireless_devices;
++extern struct avl_tree wireless_drivers;
+ 
+ struct wireless_driver {
+ 	struct avl_node node;

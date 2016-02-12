@@ -1,0 +1,247 @@
+Index: snort-2.9.6.0/configure
+===================================================================
+--- snort-2.9.6.0.orig/configure	2014-02-10 14:42:47.681004747 +1000
++++ snort-2.9.6.0/configure	2014-02-11 11:21:15.574804879 +1000
+@@ -14320,51 +14320,6 @@
+ fi
+ 
+ 
+-# In case INADDR_NONE is not defined (like on Solaris)
+-have_inaddr_none="no"
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for INADDR_NONE" >&5
+-$as_echo_n "checking for INADDR_NONE... " >&6; }
+-if test "$cross_compiling" = yes; then :
+-  { { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+-$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+-as_fn_error $? "cannot run test program while cross compiling
+-See \`config.log' for more details" "$LINENO" 5; }
+-else
+-  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-
+-#include <sys/types.h>
+-#include <netinet/in.h>
+-#include <arpa/inet.h>
+-
+-int
+-main ()
+-{
+-
+-	if (inet_addr("10,5,2") == INADDR_NONE);
+-    return 0;
+-
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_c_try_run "$LINENO"; then :
+-  have_inaddr_none="yes"
+-else
+-  have_inaddr_none="no"
+-fi
+-rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
+-  conftest.$ac_objext conftest.beam conftest.$ac_ext
+-fi
+-
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $have_inaddr_none" >&5
+-$as_echo "$have_inaddr_none" >&6; }
+-if test "x$have_inaddr_none" = "xno"; then
+-
+-$as_echo "#define INADDR_NONE -1" >>confdefs.h
+-
+-fi
+-
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -14693,46 +14648,8 @@
+   fi
+ fi
+ 
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pcap_lex_destroy" >&5
+-$as_echo_n "checking for pcap_lex_destroy... " >&6; }
+-if test "$cross_compiling" = yes; then :
+-  { { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+-$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+-as_fn_error $? "cannot run test program while cross compiling
+-See \`config.log' for more details" "$LINENO" 5; }
+-else
+-  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-
+-#include <pcap.h>
+-
+-int
+-main ()
+-{
+-
+-   pcap_lex_destroy();
+-
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_c_try_run "$LINENO"; then :
+-  have_pcap_lex_destroy="yes"
+-else
+-  have_pcap_lex_destroy="no"
+-fi
+-rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
+-  conftest.$ac_objext conftest.beam conftest.$ac_ext
+-fi
+-
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $have_pcap_lex_destroy" >&5
+-$as_echo "$have_pcap_lex_destroy" >&6; }
+-if test "x$have_pcap_lex_destroy" = "xyes"; then
+-
+ $as_echo "#define HAVE_PCAP_LEX_DESTROY 1" >>confdefs.h
+ 
+-fi
+-
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pcap_lib_version" >&5
+ $as_echo_n "checking for pcap_lib_version... " >&6; }
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+@@ -15429,7 +15346,7 @@
+ 
+ if test "x$enable_static_daq" = "xyes"; then
+     LDAQ=""
+-    LIBS="${LIBS} `daq-modules-config --static --libs`"
++    LIBS="${LIBS} `${ROOTDIR}/lib/daq/build/daq-2.0.2-install/bin/daq-modules-config --static --libs`"
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for daq_load_modules in -ldaq_static" >&5
+ $as_echo_n "checking for daq_load_modules in -ldaq_static... " >&6; }
+ if ${ac_cv_lib_daq_static_daq_load_modules+:} false; then :
+@@ -15547,47 +15464,8 @@
+ done
+ 
+ 
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for daq address space ID" >&5
+-$as_echo_n "checking for daq address space ID... " >&6; }
+-if test "$cross_compiling" = yes; then :
+-  { { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+-$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+-as_fn_error $? "cannot run test program while cross compiling
+-See \`config.log' for more details" "$LINENO" 5; }
+-else
+-  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-
+-#include <daq.h>
+-
+-int
+-main ()
+-{
+-
+-   DAQ_PktHdr_t hdr;
+-   hdr.address_space_id = 0;
+-
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_c_try_run "$LINENO"; then :
+-  have_daq_address_space_id="yes"
+-else
+-  have_daq_address_space_id="no"
+-fi
+-rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
+-  conftest.$ac_objext conftest.beam conftest.$ac_ext
+-fi
+-
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $have_daq_address_space_id" >&5
+-$as_echo "$have_daq_address_space_id" >&6; }
+-if test "x$have_daq_address_space_id" = "xyes"; then
+-
+ $as_echo "#define HAVE_DAQ_ADDRESS_SPACE_ID 1" >>confdefs.h
+ 
+-fi
+-
+ # any sparc platform has to have this one defined.
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for sparc" >&5
+ $as_echo_n "checking for sparc... " >&6; }
+Index: snort-2.9.6.0/configure.in
+===================================================================
+--- snort-2.9.6.0.orig/configure.in	2014-02-10 14:42:47.681004747 +1000
++++ snort-2.9.6.0/configure.in	2014-02-11 11:20:48.390805684 +1000
+@@ -282,27 +282,6 @@
+ 
+ AC_CHECK_TYPES([boolean])
+ 
+-# In case INADDR_NONE is not defined (like on Solaris)
+-have_inaddr_none="no"
+-AC_MSG_CHECKING([for INADDR_NONE])
+-AC_RUN_IFELSE(
+-[AC_LANG_PROGRAM(
+-[[
+-#include <sys/types.h>
+-#include <netinet/in.h>
+-#include <arpa/inet.h>
+-]],
+-[[
+-	if (inet_addr("10,5,2") == INADDR_NONE);
+-    return 0;
+-]])],
+-[have_inaddr_none="yes"],
+-[have_inaddr_none="no"])
+-AC_MSG_RESULT($have_inaddr_none)
+-if test "x$have_inaddr_none" = "xno"; then
+-	AC_DEFINE([INADDR_NONE],[-1],[For INADDR_NONE definition])
+-fi
+-
+ AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
+ #include <stdio.h>
+ ]], [[const char *foo; foo = sys_errlist[0];]])],[AC_DEFINE(ERRLIST_PREDEFINED,1,Define if errlist is predefined)],[])
+@@ -399,21 +378,7 @@
+   fi
+ fi
+ 
+-AC_MSG_CHECKING([for pcap_lex_destroy])
+-AC_RUN_IFELSE(
+-[AC_LANG_PROGRAM(
+-[[
+-#include <pcap.h>
+-]],
+-[[
+-   pcap_lex_destroy();
+-]])],
+-[have_pcap_lex_destroy="yes"],
+-[have_pcap_lex_destroy="no"])
+-AC_MSG_RESULT($have_pcap_lex_destroy)
+-if test "x$have_pcap_lex_destroy" = "xyes"; then
+     AC_DEFINE([HAVE_PCAP_LEX_DESTROY],[1],[Can cleanup lex buffer stack created by pcap bpf filter])
+-fi
+ 
+ AC_MSG_CHECKING([for pcap_lib_version])
+ AC_LINK_IFELSE(
+@@ -673,7 +638,7 @@
+ 
+ if test "x$enable_static_daq" = "xyes"; then
+     LDAQ=""
+-    LIBS="${LIBS} `daq-modules-config --static --libs`"
++    LIBS="${LIBS} `${ROOTDIR}/lib/daq/build/daq-2.0.2-install/bin/daq-modules-config --static --libs`"
+     AC_CHECK_LIB([daq_static], [daq_load_modules],
+         [LIBS="-ldaq_static ${LIBS}"], [LDAQ="no"], [ ])
+ 
+@@ -700,23 +665,8 @@
+ 
+ AC_CHECK_FUNCS([daq_hup_apply] [daq_acquire_with_meta])
+ 
+-AC_MSG_CHECKING([for daq address space ID])
+-AC_RUN_IFELSE(
+-[AC_LANG_PROGRAM(
+-[[
+-#include <daq.h>
+-]],
+-[[
+-   DAQ_PktHdr_t hdr;
+-   hdr.address_space_id = 0;
+-]])],
+-[have_daq_address_space_id="yes"],
+-[have_daq_address_space_id="no"])
+-AC_MSG_RESULT($have_daq_address_space_id)
+-if test "x$have_daq_address_space_id" = "xyes"; then
+     AC_DEFINE([HAVE_DAQ_ADDRESS_SPACE_ID],[1],
+         [DAQ version supports address space ID in header.])
+-fi
+ 
+ # any sparc platform has to have this one defined.
+ AC_MSG_CHECKING(for sparc)

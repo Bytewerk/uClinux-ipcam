@@ -1,0 +1,13 @@
+Index: netifd/interface-ip.c
+===================================================================
+--- netifd.orig/interface-ip.c
++++ netifd/interface-ip.c
+@@ -1105,6 +1105,8 @@
+ 		D(INTERFACE, "Failed to replace %s\n", resolv_conf);
+ 		unlink(path);
+ 	}
++
++	system("action reload dnsmasq");
+ }
+ 
+ void interface_ip_set_enabled(struct interface_ip_settings *ip, bool enabled)

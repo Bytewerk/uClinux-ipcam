@@ -1,0 +1,2 @@
+stunnel-5.23-getpeername-ipv6.patch
+stunnel-5.23-fork-async-safe.patch

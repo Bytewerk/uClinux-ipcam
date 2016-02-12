@@ -1,0 +1,321 @@
+options.o: ../../common/options.c ../../includes/dhcpd.h \
+ ../includes/config.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/sys/types.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/features.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/uClibc_config.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/sys/cdefs.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/types.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/wordsize.h \
+ /opt/sgpp-lite-arm-uclinux-bin-2010.09.58/bin/../lib/gcc/arm-uclinuxeabi/4.5.1/include/stddef.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/typesizes.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/pthreadtypes.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/sched.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/time.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/endian.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/endian.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/byteswap.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/byteswap.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/byteswap-common.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/sys/select.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/select.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/sigset.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/time.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/sys/sysmacros.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/netinet/in.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/stdint.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/sys/socket.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/sys/uio.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/uio.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/socket.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/limits.h \
+ /opt/sgpp-lite-arm-uclinux-bin-2010.09.58/bin/../lib/gcc/arm-uclinuxeabi/4.5.1/include-fixed/limits.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/posix1_lim.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/local_lim.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/include/linux/limits.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/uClibc_local_lim.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/posix2_lim.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/xopen_lim.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/stdio_lim.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/sockaddr.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/include/asm/socket.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/include/asm/sockios.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/in.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/sys/un.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/string.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/arpa/inet.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/netdb.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/siginfo.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/netdb.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/fcntl.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/fcntl.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/sys/stat.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/stat.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/stdio.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/uClibc_stdio.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/uClibc_mutex.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/pthread.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/sched.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/uClibc_clk_tck.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/signal.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/initspin.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/sigthread.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/uClibc_pthread.h \
+ /opt/sgpp-lite-arm-uclinux-bin-2010.09.58/bin/../lib/gcc/arm-uclinuxeabi/4.5.1/include/stdarg.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/unistd.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/posix_opt.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/environments.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/confname.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/getopt.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/stdlib.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/waitflags.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/waitstatus.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/alloca.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/sys/mman.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/mman.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/mman-common.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/ctype.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/uClibc_touplow.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/net/if.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/net/route.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/net/if_arp.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/setjmp.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/setjmp.h \
+ ../../includes/cdefs.h ../../includes/osdep.h ../../includes/site.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/inttypes.h \
+ ../../includes/arpa/nameser.h ../../includes/arpa/nameser_compat.h \
+ ../../includes/isc-dhcp/boolean.h ../../includes/isc-dhcp/lang.h \
+ ../../includes/isc-dhcp/result.h ../../includes/isc-dhcp/list.h \
+ ../../includes/isc-dhcp/types.h ../../includes/isc-dhcp/int.h \
+ ../../includes/dhcp.h ../../includes/dhcp6.h ../../includes/statement.h \
+ ../../includes/tree.h ../../includes/inet.h ../../includes/dhctoken.h \
+ ../../includes/heap.h ../../includes/omapip/omapip_p.h \
+ /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/memory.h \
+ ../../includes/isc-dhcp/dst.h ../../includes/omapip/convert.h \
+ ../../includes/omapip/hash.h ../../includes/omapip/omapip.h \
+ ../../includes/omapip/trace.h ../../includes/omapip/buffer.h \
+ ../../includes/omapip/alloc.h ../../includes/failover.h \
+ ../../includes/ctrace.h
+
+../../includes/dhcpd.h:
+
+../includes/config.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/sys/types.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/features.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/uClibc_config.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/sys/cdefs.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/types.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/wordsize.h:
+
+/opt/sgpp-lite-arm-uclinux-bin-2010.09.58/bin/../lib/gcc/arm-uclinuxeabi/4.5.1/include/stddef.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/typesizes.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/pthreadtypes.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/sched.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/time.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/endian.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/endian.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/byteswap.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/byteswap.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/byteswap-common.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/sys/select.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/select.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/sigset.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/time.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/sys/sysmacros.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/netinet/in.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/stdint.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/sys/socket.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/sys/uio.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/uio.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/socket.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/limits.h:
+
+/opt/sgpp-lite-arm-uclinux-bin-2010.09.58/bin/../lib/gcc/arm-uclinuxeabi/4.5.1/include-fixed/limits.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/posix1_lim.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/local_lim.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/include/linux/limits.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/uClibc_local_lim.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/posix2_lim.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/xopen_lim.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/stdio_lim.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/sockaddr.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/include/asm/socket.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/include/asm/sockios.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/in.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/sys/un.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/string.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/arpa/inet.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/netdb.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/siginfo.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/netdb.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/fcntl.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/fcntl.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/sys/stat.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/stat.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/stdio.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/uClibc_stdio.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/uClibc_mutex.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/pthread.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/sched.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/uClibc_clk_tck.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/signal.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/initspin.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/sigthread.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/uClibc_pthread.h:
+
+/opt/sgpp-lite-arm-uclinux-bin-2010.09.58/bin/../lib/gcc/arm-uclinuxeabi/4.5.1/include/stdarg.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/unistd.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/posix_opt.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/environments.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/confname.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/getopt.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/stdlib.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/waitflags.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/waitstatus.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/alloca.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/sys/mman.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/mman.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/mman-common.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/ctype.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/uClibc_touplow.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/net/if.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/net/route.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/net/if_arp.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/setjmp.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/bits/setjmp.h:
+
+../../includes/cdefs.h:
+
+../../includes/osdep.h:
+
+../../includes/site.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/inttypes.h:
+
+../../includes/arpa/nameser.h:
+
+../../includes/arpa/nameser_compat.h:
+
+../../includes/isc-dhcp/boolean.h:
+
+../../includes/isc-dhcp/lang.h:
+
+../../includes/isc-dhcp/result.h:
+
+../../includes/isc-dhcp/list.h:
+
+../../includes/isc-dhcp/types.h:
+
+../../includes/isc-dhcp/int.h:
+
+../../includes/dhcp.h:
+
+../../includes/dhcp6.h:
+
+../../includes/statement.h:
+
+../../includes/tree.h:
+
+../../includes/inet.h:
+
+../../includes/dhctoken.h:
+
+../../includes/heap.h:
+
+../../includes/omapip/omapip_p.h:
+
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/staging/uClibc/include/memory.h:
+
+../../includes/isc-dhcp/dst.h:
+
+../../includes/omapip/convert.h:
+
+../../includes/omapip/hash.h:
+
+../../includes/omapip/omapip.h:
+
+../../includes/omapip/trace.h:
+
+../../includes/omapip/buffer.h:
+
+../../includes/omapip/alloc.h:
+
+../../includes/failover.h:
+
+../../includes/ctrace.h:

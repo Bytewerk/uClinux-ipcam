@@ -1,0 +1,21 @@
+
+CFLAGS   := $(CFLAGS:-fno-common=)
+
+URL       = https://git.libssh.org/projects/libssh.git/snapshot/libssh-0.7.2.tar.gz
+SRCDIR   := libssh-0.7.2
+BUILDDIR := libssh-0.7.2-build
+AUTOCONF  =  mkdir -p ../$(BUILDDIR) ; cd ../$(BUILDDIR) ; cmake ../$(SRCDIR)
+AUTOCONF += -DCMAKE_INSTALL_PREFIX= -DCMAKE_SYSTEM_PREFIX_PATH=$(STAGEDIR)
+AUTOCONF += -DOPENSSL_INCLUDE_DIR=$(STAGEDIR)
+AUTOCONF += -DWITH_SERVER=OFF
+AUTOCONF += -DWITH_GCRYPT=OFF
+AUTOCONF += -DWITH_GSSAPI=OFF
+AUTOCONF += -DWITH_NACL=OFF
+AUTOCONF += -DWITH_EXAMPLES=OFF
+AUTOCONF += -DWITH_INTERNAL_DOC=ON
+AUTOCONF += -DWITH_STACK_PROTECTOR=OFF
+
+
+include $(ROOTDIR)/tools/automake.inc
+
+
