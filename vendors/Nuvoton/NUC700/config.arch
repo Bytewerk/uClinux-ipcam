@@ -25,5 +25,6 @@ DISABLE_SHARED_SSL := 1
 ############################################################################
 
 include $(ROOTDIR)/vendors/config/armnommu/config.arch
+KERNEL_CROSS_COMPILE = arm-linux-gnueabi-
 
 ############################################################################

@@ -1,4 +1,7 @@
 /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/user/busybox/busybox /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/romfs/bin/busybox
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/user/ipcamd/ipcamd /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/romfs/bin/ipcamd
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/user/ipcamd/dlipcamd /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/romfs/bin/dlipcamd
+/home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/user/ipcamd/private.pem /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/romfs/etc/private.pem
 /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/user/wireless_tools/iwconfig /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/romfs/bin/iwconfig
 /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/user/wireless_tools/iwlist /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/romfs/bin/iwlist
 /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/user/wireless_tools/iwpriv /home/coffeeholic/reverse_engineering/pollin_ip_cam/uClinux-20160208/romfs/bin/iwpriv

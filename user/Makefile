@@ -157,6 +157,7 @@ dir_$(CONFIG_USER_INETD_INETD)              += inetd
 dir_$(CONFIG_USER_INIT_EXPAND)              += init
 dir_$(CONFIG_USER_INIT_INIT)                += init
 dir_$(CONFIG_USER_IPCHAINS_IPCHAINS)        += ipchains
+dir_$(CONFIG_USER_IPCAMD_IPCAMD)            += ipcamd
 dir_$(CONFIG_USER_IPFWADM_IPFWADM)          += ipfwadm
 dir_$(CONFIG_USER_IPMASQADM_IPMASQADM)      += ipmasqadm
 dir_$(CONFIG_USER_IPPORTFW_IPPORTFW)        += ipportfw

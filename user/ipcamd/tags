@@ -1,0 +1,128 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BUFFER_COUNT	config.h	30;"	d
+CLEAR	ipcamd.c	90;"	d	file:
+CONFIG_MTD	config.h	46;"	d
+ENUM_CONTROLS	config.h	43;"	d
+EXEC	Makefile	/^EXEC = ipcamd$/;"	m
+HAVE_JPEG_MEM_SRC	jpegdecode.c	37;"	d	file:
+HTTPD	config.h	36;"	d
+IO_METHOD_MMAP	ipcamd.c	/^	IO_METHOD_READ, IO_METHOD_MMAP, IO_METHOD_USERPTR,$/;"	e	enum:__anon1	file:
+IO_METHOD_READ	ipcamd.c	/^	IO_METHOD_READ, IO_METHOD_MMAP, IO_METHOD_USERPTR,$/;"	e	enum:__anon1	file:
+IO_METHOD_USERPTR	ipcamd.c	/^	IO_METHOD_READ, IO_METHOD_MMAP, IO_METHOD_USERPTR,$/;"	e	enum:__anon1	file:
+LOCKS	config.h	35;"	d
+MIN_QUEUED	config.h	33;"	d
+NOT_FOUND_ERROR	ipcamd.c	/^static const char NOT_FOUND_ERROR[] =$/;"	v	file:
+PROFILE_BEGIN	profiling.h	38;"	d
+PROFILE_BEGIN	profiling.h	52;"	d
+PROFILE_END	profiling.h	43;"	d
+PROFILE_END	profiling.h	53;"	d
+REF_SCALE	motion.c	42;"	d	file:
+REF_SCALE_ROUND	motion.c	43;"	d	file:
+buf	ipcamd.c	/^	struct v4l2_buffer buf;$/;"	m	struct:buffer_t	typeref:struct:buffer_t::v4l2_buffer	file:
+buffer_t	ipcamd.c	/^struct buffer_t {$/;"	s	file:
+cam_config	config.h	/^struct cam_config {$/;"	s
+cam_name	config.h	/^	char cam_name[10];$/;"	m	struct:cam_config
+client_state	ipcamd.c	/^struct client_state {$/;"	s	file:
+close_device	ipcamd.c	/^static void close_device(void)$/;"	f	file:
+count	ipcamd.c	/^static unsigned int count = 100;$/;"	v	file:
+ctrl_get_value	v4l2_control.c	/^int ctrl_get_value(int control_id)$/;"	f
+ctrl_set_value	v4l2_control.c	/^void ctrl_set_value(int control_id, int val)$/;"	f
+ctrl_type_names	v4l2_control.c	/^static const char* ctrl_type_names[] = {$/;"	v	file:
+decode_jpeg	jpegdecode.c	/^int decode_jpeg(void* jpeg_data, size_t jpeg_sz, int scale_denom,$/;"	f
+destroy_buffers	ipcamd.c	/^static void destroy_buffers()$/;"	f	file:
+detect_motion	motion.c	/^void detect_motion(unsigned char* img, int width, int height)$/;"	f
+dev_name	ipcamd.c	/^static char * dev_name = "\/dev\/video0";$/;"	v	file:
+dhcp	ipcamd.c	/^static char dhcp = 0;$/;"	v	file:
+dhcp_pid	ipcamd.c	/^static pid_t dhcp_pid;$/;"	v	file:
+dump_ringbuffer	ipcamd.c	/^static void dump_ringbuffer(const char* tag)$/;"	f	file:
+encode_sig	jpegsign.c	/^void encode_sig(void* sig, int sig_sz)$/;"	f
+enumerate_controls	v4l2_control.c	/^void enumerate_controls()$/;"	f
+enumerate_menu	v4l2_control.c	/^static void enumerate_menu(struct v4l2_queryctrl* queryctrl)$/;"	f	file:
+erase_config	config.c	/^int erase_config()$/;"	f
+errno_exit	ipcamd.c	/^static void errno_exit(const char * s)$/;"	f	file:
+fd	ipcamd.c	/^int fd = -1;$/;"	v
+fill_input_buffer	jpegdecode.c	/^static boolean fill_input_buffer (j_decompress_ptr cinfo)$/;"	f	file:
+frame_counter	ipcamd.c	/^static int frame_counter = 0;$/;"	v	file:
+frame_id	ipcamd.c	/^	int frame_id;$/;"	m	struct:buffer_t	file:
+frame_id	ipcamd.c	/^	int frame_id;$/;"	m	struct:client_state	file:
+frame_idx	ipcamd.c	/^	int frame_idx;$/;"	m	struct:client_state	file:
+frame_offset	ipcamd.c	/^	int frame_offset;$/;"	m	struct:client_state	file:
+g_config	ipcamd.c	/^struct cam_config g_config;$/;"	v	typeref:struct:cam_config
+g_height	motion.c	/^static int g_width, g_height;$/;"	v	file:
+g_profileDepth	ipcamd.c	/^	int g_profileDepth;$/;"	v
+g_watchdog	ipcamd.c	/^static int g_watchdog;$/;"	v	file:
+g_width	motion.c	/^static int g_width, g_height;$/;"	v	file:
+height	ipcamd.c	/^static unsigned int height = 480;$/;"	v	file:
+http_frame_reader	ipcamd.c	/^static ssize_t http_frame_reader(void *cls, uint64_t pos, char *send_buf, size_t max)$/;"	f	file:
+http_free_callback	ipcamd.c	/^static void http_free_callback(void *cls)$/;"	f	file:
+http_multipart_header	ipcamd.c	/^	char http_multipart_header[sizeof(http_multipart_header_template)-1];$/;"	m	struct:buffer_t	file:
+http_multipart_header_template	ipcamd.c	/^	const char http_multipart_header_template[] =$/;"	v
+http_request_handler	ipcamd.c	/^int http_request_handler(void *cls, struct MHD_Connection *connection,$/;"	f
+i	ipcamd.c	/^static unsigned int i = 0;$/;"	v	file:
+img_ref	motion.c	/^static pixel_type img_ref[640*480\/8\/8];$/;"	v	file:
+init_buffers	ipcamd.c	/^static void init_buffers()$/;"	f	file:
+init_config	config.c	/^void init_config(struct cam_config* c)$/;"	f
+init_device	ipcamd.c	/^static void init_device(void)$/;"	f	file:
+init_mmap	ipcamd.c	/^static void init_mmap(char free_buffers)$/;"	f	file:
+init_read	ipcamd.c	/^static void init_read(unsigned int buffer_size)$/;"	f	file:
+init_source	jpegdecode.c	/^static void init_source (j_decompress_ptr cinfo)$/;"	f	file:
+init_userp	ipcamd.c	/^static void init_userp(unsigned int buffer_size)$/;"	f	file:
+invalid_parameters	ipcamd.c	/^	char invalid_parameters;      \/* used to disable buffers upon cam restart *\/$/;"	m	struct:buffer_t	file:
+io	ipcamd.c	/^static io_method io = IO_METHOD_MMAP;$/;"	v	file:
+io_method	ipcamd.c	/^} io_method;$/;"	t	typeref:enum:__anon1	file:
+ip	config.h	/^	unsigned int ip;         \/* 0 = dhcp *\/$/;"	m	struct:cam_config
+jpeg_decode	ipcamd.c	/^	static char jpeg_decode = 0;$/;"	v	file:
+jpeg_get_quality	v4l2_control.c	/^int jpeg_get_quality()$/;"	f
+jpeg_mem_src	jpegdecode.c	/^static void jpeg_mem_src (j_decompress_ptr cinfo, void* buffer, long nbytes)$/;"	f	file:
+jpeg_set_quality	v4l2_control.c	/^void jpeg_set_quality(int quality)$/;"	f
+jpeg_sign	ipcamd.c	/^	static char jpeg_sign = 0;$/;"	v	file:
+length	ipcamd.c	/^	size_t length;$/;"	m	struct:buffer_t	file:
+load_private_key	jpegsign.c	/^int load_private_key(const char* keyfilename, RSA** rsa_key)$/;"	f
+long_options	ipcamd.c	/^static const struct option long_options[] = {$/;"	v	typeref:struct:option	file:
+main	ipcamd.c	/^int main(int argc, char ** argv)$/;"	f
+mainloop	ipcamd.c	/^static void mainloop(void)$/;"	f	file:
+mk_response_404	ipcamd.c	/^static int mk_response_404(struct MHD_Connection *connection)$/;"	f	file:
+mk_response_text	ipcamd.c	/^static int mk_response_text(struct MHD_Connection *connection, const char* text)$/;"	f	file:
+mmap_flags	ipcamd.c	/^static int mmap_flags = MAP_SHARED;$/;"	v	file:
+mutex	ipcamd.c	/^	pthread_mutex_t mutex;$/;"	m	struct:buffer_t	file:
+open_device	ipcamd.c	/^static void open_device(void)$/;"	f	file:
+pixel_type	motion.c	/^typedef unsigned short pixel_type;$/;"	t	file:
+print_config	config.c	/^void print_config(struct cam_config* c)$/;"	f
+process_get_param_resolution	ipcamd.c	/^static int process_get_param_resolution(struct MHD_Connection* connection, int* ret)$/;"	f	file:
+queued	ipcamd.c	/^	char queued;$/;"	m	struct:buffer_t	file:
+read_config	config.c	/^int read_config(struct cam_config* c)$/;"	f
+read_frame	ipcamd.c	/^static int read_frame(void)$/;"	f	file:
+refcount	ipcamd.c	/^	int refcount;$/;"	m	struct:buffer_t	file:
+restart_cam	ipcamd.c	/^static char restart_cam = 0;$/;"	v	file:
+ringbuffer	ipcamd.c	/^struct buffer_t ringbuffer[BUFFER_COUNT];$/;"	v	typeref:struct:buffer_t
+rsa_key	ipcamd.c	/^	static RSA* rsa_key;$/;"	v	file:
+run_bg_process	system.c	/^int run_bg_process(const char* filename, char* const args[])$/;"	f
+save_reference_image	motion.c	/^void save_reference_image(const char* fn)$/;"	f
+short_options	ipcamd.c	/^static const char short_options[] = "d:hmrupc:w:jsDv";$/;"	v	file:
+sign_data	jpegsign.c	/^int sign_data(void* jpeg_data, size_t jpeg_sz, RSA* rsa_key)$/;"	f
+skip_input_data	jpegdecode.c	/^static void skip_input_data (j_decompress_ptr cinfo, long num_bytes)$/;"	f	file:
+snapshot	ipcamd.c	/^	char snapshot;$/;"	m	struct:client_state	file:
+start	ipcamd.c	/^	void* start;$/;"	m	struct:buffer_t	file:
+start_capturing	ipcamd.c	/^static void start_capturing(void)$/;"	f	file:
+stop_capturing	ipcamd.c	/^static void stop_capturing(void) {$/;"	f	file:
+term_source	jpegdecode.c	/^static void term_source (j_decompress_ptr cinfo)$/;"	f	file:
+thresh	motion.c	/^static int thresh = 3000;    \/\/ mean absolute distance * 1000$/;"	v	file:
+uninit_device	ipcamd.c	/^static void uninit_device(void)$/;"	f	file:
+usage	ipcamd.c	/^static void usage(FILE * fp, int argc, char ** argv) {$/;"	f	file:
+valid	config.h	/^	char valid;              \/* 0 => run init_config() *\/$/;"	m	struct:cam_config
+verbose	ipcamd.c	/^static char verbose = 0;$/;"	v	file:
+version	config.h	/^	char version;            \/* config version. valid versions: 0 *\/$/;"	m	struct:cam_config
+w	motion.c	/^static const int w = 10;     \/\/ in percent$/;"	v	file:
+watchdog_close	ipcamd.c	/^void watchdog_close(char silent)$/;"	f
+watchdog_open	ipcamd.c	/^void watchdog_open()$/;"	f
+watchdog_ping	ipcamd.c	/^void watchdog_ping()$/;"	f
+width	ipcamd.c	/^static unsigned int width = 640;$/;"	v	file:
+write_config	config.c	/^int write_config(struct cam_config* c)$/;"	f
+write_pgm	jpegdecode.c	/^int write_pgm(const char* filename, unsigned char* data, int width, int height)$/;"	f
+write_pgm_scaled	jpegdecode.c	/^int write_pgm_scaled(const char* filename, unsigned short* data,$/;"	f
+xioctl	ipcamd.c	/^static int xioctl(int fd, int request, void * arg)$/;"	f	file:

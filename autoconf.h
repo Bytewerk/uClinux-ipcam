@@ -1,12 +1,12 @@
 /*
  * Automatically generated C config: don't edit
  * Dist builder
- * Thu Feb 11 23:33:07 2016
+ * Sat Feb 13 01:01:27 2016
  */
 #define AUTOCONF_INCLUDED
 #define CONFIG_DISTVERSION "5.0"
 #define CONFIG_DEFAULTS_KERNEL_LINUX 1
-#define CONFIG_DEFAULTS_VENDOR_UPDATE 1
+#define CONFIG_DEFAULTS_VENDOR 1
 #define CONFIG_DEFAULTS_NUVOTON_NUC700 1
 #define CONFIG_DEFAULTS_LIBC_UCLIBC 1
 #define CONFIG_DEFAULTS_NUVOTON 1

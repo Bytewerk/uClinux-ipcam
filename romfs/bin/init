@@ -1,33 +1,11 @@
-#!/bin/sh
-
-echo
-echo "*************************************************"
-echo "***** oculusCAM is starting, please wait... *****"
-echo "*************************************************"
-echo
-
-# Create SquashFS + tmpfs overlay for root filesystem using unionfs
-
-mount -t tmpfs   tmpfs  /tmp
-
-# When booting with initramfs, the bind will fail. Don't panic!
-if  mount -o bind      /     /mnt/root ; then
-	echo "Booting from ROM"
-	mount -t unionfs   none  /mnt/union -o dirs=/tmp:/mnt/root=ro
-	mount -t proc      proc  /mnt/union/proc
-	mount -t devtmpfs  dev   /mnt/union/dev
-	mkdir -p /mnt/union/dev/pts
-	mount -t devpts    pts   /mnt/union/dev/pts
-
-	# Change-root to the prepared root filesystem and execute the late init script
-	chroot /mnt/union /bin/sh /bin/init.late
-else
-	# We're on initramfs
-	echo "Booting from INITRAMFS"
-	mount -t proc      proc  /proc
-	mount -t devtmpfs  dev   /dev
-	mkdir -p /dev/pts
-	mount -t devpts    pts   /dev/pts
-
-	/bin/init.late
-fi
+#!/bin/busybox sh
+mount -t proc none /proc
+mount -t ramfs none /usr
+mount -t ramfs none /swap
+mount -t ramfs none /var/run
+mount -t ramfs none /etc
+mount -t ramfs none /flash
+mount -t ramfs none /home
+mount -t ramfs none /tmp
+mkdir /tmp/run
+exec /bin/busybox sh -i

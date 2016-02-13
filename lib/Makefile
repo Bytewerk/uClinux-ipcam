@@ -81,6 +81,15 @@ lib_libatm = \
 	src/lib/*.a
 inc_libatm = src/include/atm*.h,.
 
+dir_$(CONFIG_LIB_LIBMICROHTTPD) += libmicrohttpd
+lib_libmicrohttpd = \
+	src/daemon/.libs/*.a* \
+	src/daemon/.libs/*.so* \
+	libmicrohttpd.pc
+inc_libmicrohttpd = \
+	src/include/*.h,. \
+	src/include/plibc,.
+
 dir_$(CONFIG_LIB_LIBNET) += Libnet
 
 dir_$(CONFIG_LIB_LIBNETOLD) += libnet
